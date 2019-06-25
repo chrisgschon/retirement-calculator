@@ -63,7 +63,7 @@ def update(monthly_savings, starting_pot, growth):
     milestone_years = []
     for m in milestones:
         if p_nom[-1] > m:
-            milestone_years.append(year_range[np.argmax(np.array(portfolio_nom)>m)])
+            milestone_years.append(year_range[np.argmax(np.array(portfolio_nom)>m)-1])
     
     annotations =  [dict(x = year, y = m, text = '£' + "{:,}".format(m) + ' saved by ' + str(year), 
                         showarrow = False,
